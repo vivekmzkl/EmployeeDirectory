@@ -13,8 +13,13 @@ struct EmployeeDirectoryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmployeeListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+    }
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
     }
 }
